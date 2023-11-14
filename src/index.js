@@ -26,6 +26,37 @@ const generateToken = (payload) => {
   return token;
 };
 
+// Middleware de autenticación JWT
+const authenticateJWT = (req, res, next) => {
+  const token = req.header('Authorization');
+
+  if (req.path === '/profile') {
+    if (!token) {
+      return res.status(401).json({
+        success: false,
+        message: 'Token de autenticación no proporcionado',
+      });
+    }
+
+    jwt.verify(token, 'secreto', (err, user) => {
+      if (err) {
+        return res.status(403).json({
+          success: false,
+          message: 'Token de autenticación inválido',
+        });
+      }
+
+      req.user = user;
+
+      next();
+    });
+  } else {
+    next();
+  }
+};
+
+app.use(authenticateJWT);
+
 const port = 4500;
 app.listen(port, () => {
   console.log(`Servidor iniciado en http://localhost:${port}`);
@@ -198,4 +229,59 @@ app.post('/register', async (req, res) => {
       error: error.message,
     });
   }
+});
+
+//5. BONUS: LOGIN DE USUARIOS
+
+app.post('/login', async (req, res) => {
+  const { email, password } = req.body;
+
+  let sql = 'SELECT * FROM users WHERE email =?';
+
+  const conn = await getConnection();
+  const [user] = await conn.query(sql, [email]);
+
+  if (user.length === 0) {
+    return res.status(401).json({
+      success: false,
+      message: 'Credenciales incorrectas',
+    });
+  }
+
+  const isValidPassword = await bcrypt.compare(password, user[0].password);
+
+  if (!isValidPassword) {
+    return res.status(401).json({
+      success: false,
+      message: 'Credenciales incorrectas',
+    });
+  }
+
+  const tokenPayload = { idUser: user[0].idUser, email: user[0].email };
+  const token = generateToken(tokenPayload);
+
+  res.json({
+    success: true,
+    token: token,
+  });
+});
+
+//6.BONUS IMPLEMENTAR UN MIDDLEWARE DE AUTENTICACIÓN (definido en L.29).Se utiliza en este endpoint para que solo tengan acceso los usuarios logados correctamente.
+
+app.get('/profile', authenticateJWT, async (req, res) => {
+  const idUser = req.user.idUser;
+  const email = req.user.email;
+
+  const conn = await getConnection();
+  const [userData] = await conn.query('SELECT * FROM users WHERE idUser=?', [
+    idUser,
+  ]);
+
+  res.json({
+    success: true,
+    profile: {
+      email: email,
+      additionalData: userData,
+    },
+  });
 });

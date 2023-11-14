@@ -1,3 +1,21 @@
+--Modelo para el body de postman
+{
+  "slug": 
+  "category":
+  "creator":
+  "effect":
+  "hand":
+  "image":
+  "incantation":
+  "light":
+  "name":
+  "wiki"
+}
+
+
+
+
+
 use freedb_module4_exam;
 
 CREATE TABLE `spells` (
@@ -66,28 +84,16 @@ WHERE idSpell = 4;
 
 
 
-
---Modelo para el body de postman
-{
-  "slug": 
-  "category":
-  "creator":
-  "effect":
-  "hand":
-  "image":
-  "incantation":
-  "light":
-  "name":
-  "wiki"
-}
-
-
 --------BONUS----------
 
 
 CREATE TABLE `users`(
- `id`int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ `idUser`int NOT NULL AUTO_INCREMENT PRIMARY KEY,
  `email` VARCHAR(60) NOT NULL UNIQUE,
  `name` VARCHAR(60) NOT NULL,
  `password` VARCHAR(60) NOT NULL
 );
+
+SELECT * FROM users;
+
+INSERT INTO users(`name`, `email`, `password`) VALUES ("Ysabel", "ysaval@gmail.com", "12345678")
