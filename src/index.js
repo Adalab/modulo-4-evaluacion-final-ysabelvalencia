@@ -74,10 +74,9 @@ app.post('/spells', async (req, res) => {
       light,
       name,
       wiki,
+      idSpell,
     ]);
 
-    // Valida si la receta ya existe, o está duplicada
-    //validar si se ha insertado o no
     if (spellsList.affectedRows === 0) {
       res.json({
         success: false,
@@ -96,4 +95,48 @@ app.post('/spells', async (req, res) => {
       message: `Ha ocurrido un error${error}`,
     });
   }
+});
+
+//3.ACTUALIZAR UN SPELL YA EXISTENTE
+
+app.put('/spells/:id', async (req, res) => {
+  const dataSpell = req.body; //objeto
+  const {
+    slug,
+    category,
+    creator,
+    effect,
+    hand,
+    image,
+    incantation,
+    light,
+    name,
+    wiki,
+  } = dataSpell;
+
+  const idSpell = req.params.id;
+
+  let sql =
+    'UPDATE spells SET slug=?, category=?, creator=?, effect=?, hand=?, image=?, incantation=?, light=?, name=?, wiki=? WHERE idSpell=?';
+
+  const conn = await getConnection();
+
+  const [spellsList] = await conn.query(sql, [
+    slug,
+    category,
+    creator,
+    effect,
+    hand,
+    image,
+    incantation,
+    light,
+    name,
+    wiki,
+    idSpell,
+  ]);
+
+  res.json({
+    success: true,
+    message: 'Actualizado correctamente',
+  });
 });
