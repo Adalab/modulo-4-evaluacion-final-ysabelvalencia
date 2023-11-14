@@ -42,6 +42,8 @@ app.get('/spells', async (req, res) => {
 });
 
 //2.ENDPOINT CREAR NUEVA ENTRADA EN LA BD
+//validaciones: no dejar añadir más con el mismo nombre
+
 app.post('/spells', async (req, res) => {
   const dataSpell = req.body; //objeto
   const {
@@ -74,7 +76,6 @@ app.post('/spells', async (req, res) => {
       light,
       name,
       wiki,
-      idSpell,
     ]);
 
     if (spellsList.affectedRows === 0) {
@@ -138,5 +139,23 @@ app.put('/spells/:id', async (req, res) => {
   res.json({
     success: true,
     message: 'Actualizado correctamente',
+  });
+});
+
+//4. ELIMINAR UN SPELL DE LA TABLA
+
+app.delete('/spells/:id', async (req, res) => {
+  const idSpell = req.params.id;
+
+  let sql = 'DELETE FROM spells WHERE idSpell=?';
+
+  const conn = await getConnection();
+
+  //Ejecutar esa consulta
+  const [spellList] = await conn.query(sql, [idSpell]);
+
+  res.json({
+    success: true,
+    message: 'Eliminado correctamente',
   });
 });

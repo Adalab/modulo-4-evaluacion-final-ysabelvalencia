@@ -16,11 +16,16 @@ ALTER TABLE `freedb_module4_exam`.`spells`
 ADD COLUMN `name` VARCHAR(60) NOT NULL AFTER `light`,
 ADD COLUMN `wiki` VARCHAR(150) NULL DEFAULT NULL AFTER `name`;
 
+-- Prueba 1 para introducir datos en la tabla
 
 INSERT INTO `spells` (`slug`, `category`, `creator`, `effect`, `hand`, `image`,`incantation`, `light`, `name`,`wiki`) VALUES ("age-line","Charm",null,"Prevents people above or below a certain age from access to a target",  null,"https://static.wikia.nocookie.net/harrypotter/images/e/e5/Age_Line_surrounding_the_Goblet_of_Fire_PM.jpg", null, "Blue","Age Line","https://harrypotter.fandom.com/wiki/Age_Line");
 
+-- Amplio VARCHAR porque habia sobrepasado los 60 caracteres
+
 ALTER TABLE `freedb_module4_exam`.`spells` 
 CHANGE COLUMN `effect` `effect` VARCHAR(150) NOT NULL ;
+
+--Prueba 2 OK, se añaden las dos filas nuevas correctamente
 
 INSERT INTO `spells` (`slug`, `category`, `creator`, `effect`, `hand`, `image`,`incantation`, `light`, `name`,`wiki`) VALUES ("alarte-ascendare","Charm",null,"Rockets target upward","Brandish wand","https://static.wikia.nocookie.net/harrypotter/images/c/c4/Alarte_Ascendare.gif","Alarte Ascendare(a-LAR-tay a-SEN-der-ay)","Red","Alarte Ascendare","https://harrypotter.fandom.com/wiki/Alarte_Ascendare");
 
@@ -28,7 +33,7 @@ INSERT INTO `spells` (`slug`, `category`, `creator`, `effect`, `hand`, `image`,`
 
 SELECT * FROM spells;
 
--- prueba actualizando un solo campo: creator = Null por creator = Unknown, OK
+-- Prueba 3 OK, actualizar un solo campo. Cambio creator = Null por creator = Unknown.
 
 UPDATE spells 
 SET slug ='amplifying-charm',
@@ -43,7 +48,7 @@ SET slug ='amplifying-charm',
     wiki ='https://harrypotter.fandom.com/wiki/Amplifying_Charm'
 WHERE idSpell = 4;
 
--- prueba cambiado varios campos por Test, OK
+-- Prueba 4 OK,  cambio varios campos por Test.
 
 UPDATE spells 
 SET slug ='Test',
