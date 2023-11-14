@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const mysql = require('mysql2/promise');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
 
 const app = express();
 
@@ -159,3 +161,37 @@ app.delete('/spells/:id', async (req, res) => {
     message: 'Eliminado correctamente',
   });
 });
+
+//5. BONUS: REGISTRO DE USUARIOS
+
+app.post('/register', async (req, res) => {
+  const name = req.body.username;
+  const password = req.body.password;
+  const email = req.body.email;
+
+  //encriptar la contraseña
+  const passwordHashed = await bcrypt.hash(password, 10); //aumentar la seguridad de contraseña encriptada
+
+  // prepara la consulta sql
+  const sql =
+    'INSERT INTO users(username, email, hashed_password) VALUES (?, ? ,?)';
+
+  const conn = await getConnection();
+
+  const [results] = await conn.query(sql, [username, email, passwordHashed]);
+  conn.end();
+  res.json({
+    success: true,
+    id: results.insertId,
+  });
+});
+
+// {
+//   "success": true,
+//   "token": token
+// }
+
+// {
+//   "success": false,
+//   "token": error
+// }

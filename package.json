@@ -17,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/Adalab/modulo-4-evaluacion-final-ysabelvalencia/issues"
   },
-  "homepage": "https://github.com/Adalab/modulo-4-evaluacion-final-ysabelvalencia#readme"
+  "homepage": "https://github.com/Adalab/modulo-4-evaluacion-final-ysabelvalencia#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "jsonwebtoken": "^9.0.2"
+  }
 }

@@ -80,3 +80,14 @@ WHERE idSpell = 4;
   "name":
   "wiki"
 }
+
+
+--------BONUS----------
+
+
+CREATE TABLE `users`(
+ `id`int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ `email` VARCHAR(60) NOT NULL UNIQUE,
+ `name` VARCHAR(60) NOT NULL,
+ `password` VARCHAR(60) NOT NULL
+);
