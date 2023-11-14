@@ -21,6 +21,11 @@ async function getConnection() {
   return connection;
 }
 
+const generateToken = (payload) => {
+  const token = jwt.sign(payload, 'secreto', { expiresIn: '12h' });
+  return token;
+};
+
 const port = 4500;
 app.listen(port, () => {
   console.log(`Servidor iniciado en http://localhost:${port}`);
@@ -174,11 +179,11 @@ app.post('/register', async (req, res) => {
 
   // prepara la consulta sql
   const sql =
-    'INSERT INTO users(username, email, hashed_password) VALUES (?, ? ,?)';
+    'INSERT INTO users(`name`, email, hashed_password) VALUES (?, ?, ?)';
 
   const conn = await getConnection();
 
-  const [results] = await conn.query(sql, [username, email, passwordHashed]);
+  const [results] = await conn.query(sql, [name, email, passwordHashed]);
   conn.end();
   res.json({
     success: true,
