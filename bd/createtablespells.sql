@@ -26,7 +26,43 @@ INSERT INTO `spells` (`slug`, `category`, `creator`, `effect`, `hand`, `image`,`
 
 INSERT INTO `spells` (`slug`, `category`, `creator`, `effect`, `hand`, `image`,`incantation`, `light`, `name`,`wiki`) VALUES ("amplifying-charm","Charm",null,"Loudens target","Direct at target","https://static.wikia.nocookie.net/harrypotter/images/2/29/Sonorous_GOF_Dumbledore_1.jpg","Sonorus(soh-NOHR-us)","None","Amplifying Charm","https://harrypotter.fandom.com/wiki/Amplifying_Charm");
 
+SELECT * FROM spells;
 
+-- prueba actualizando un solo campo: creator = Null por creator = Unknown, OK
+
+UPDATE spells 
+SET slug ='amplifying-charm',
+    category ='Charm',
+    creator ='Unknown',
+    effect ='Loudens target',
+    hand ='Direct at target',
+    image ='https://static.wikia.nocookie.net/harrypotter/images/2/29/Sonorous_GOF_Dumbledore_1.jpg', 
+    incantation ='Sonorus(soh-NOHR-us)',
+    light ='None',
+    name ='Amplifying Charm',
+    wiki ='https://harrypotter.fandom.com/wiki/Amplifying_Charm'
+WHERE idSpell = 4;
+
+-- prueba cambiado varios campos por Test, OK
+
+UPDATE spells 
+SET slug ='Test',
+    category ='Test',
+    creator ='Unknown',
+    effect ='test',
+    hand ='Direct at target',
+    image ='https://static.wikia.nocookie.net/harrypotter/images/2/29/Sonorous_GOF_Dumbledore_1.jpg', 
+    incantation ='Sonorus(soh-NOHR-us)',
+    light ='Test',
+    name ='Amplifying Charm',
+    wiki ='https://harrypotter.fandom.com/wiki/Amplifying_Charm'
+WHERE idSpell = 4;
+
+
+
+
+
+--Modelo para el body de postman
 {
   "slug": 
   "category":
