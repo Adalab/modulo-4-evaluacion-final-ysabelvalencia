@@ -170,33 +170,32 @@ app.delete('/spells/:id', async (req, res) => {
 //5. BONUS: REGISTRO DE USUARIOS
 
 app.post('/register', async (req, res) => {
-  const name = req.body.username;
-  const password = req.body.password;
-  const email = req.body.email;
+  const { email, password, name } = req.body;
 
-  //encriptar la contraseña
-  const passwordHashed = await bcrypt.hash(password, 10); //aumentar la seguridad de contraseña encriptada
+  try {
+    if (!email || !password || !name) {
+      throw new Error(
+        'Se requiere un correo electrónico, una contraseña y un nombre.'
+      );
+    }
+    const passwordHashed = await bcrypt.hash(password, 10);
 
-  // prepara la consulta sql
-  const sql =
-    'INSERT INTO users(`name`, email, hashed_password) VALUES (?, ?, ?)';
+    const sql =
+      'INSERT INTO users(`email`, `name`, `password`) VALUES (?, ?, ?)';
 
-  const conn = await getConnection();
+    const conn = await getConnection();
+    const [results] = await conn.query(sql, [email, name, passwordHashed]);
 
-  const [results] = await conn.query(sql, [name, email, passwordHashed]);
-  conn.end();
-  res.json({
-    success: true,
-    id: results.insertId,
-  });
+    const token = generateToken({ email, name });
+
+    res.json({
+      success: true,
+      token: token,
+    });
+  } catch (error) {
+    res.json({
+      success: false,
+      error: error.message,
+    });
+  }
 });
-
-// {
-//   "success": true,
-//   "token": token
-// }
-
-// {
-//   "success": false,
-//   "token": error
-// }
