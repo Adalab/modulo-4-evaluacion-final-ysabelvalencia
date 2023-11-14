@@ -35,9 +35,65 @@ app.get('/spells', async (req, res) => {
 
   const numOfSpells = spellsList.length;
 
-  //Enviar una respuesta
   res.json({
-    info: { count: numOfSpells }, // número de elementos
-    spellsList: spellsList, // listado
+    info: { count: numOfSpells },
+    spellsList: spellsList,
   });
+});
+
+//2.ENDPOINT CREAR NUEVA ENTRADA EN LA BD
+app.post('/spells', async (req, res) => {
+  const dataSpell = req.body; //objeto
+  const {
+    slug,
+    category,
+    creator,
+    effect,
+    hand,
+    image,
+    incantation,
+    light,
+    name,
+    wiki,
+  } = dataSpell;
+
+  let sql =
+    'INSERT INTO spells (slug, category, creator, effect, hand, image,incantation, light, name,wiki) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);';
+
+  try {
+    const conn = await getConnection();
+
+    const [spellsList] = await conn.query(sql, [
+      slug,
+      category,
+      creator,
+      effect,
+      hand,
+      image,
+      incantation,
+      light,
+      name,
+      wiki,
+    ]);
+
+    // Valida si la receta ya existe, o está duplicada
+    //validar si se ha insertado o no
+    if (spellsList.affectedRows === 0) {
+      res.json({
+        success: false,
+        message: 'No se ha podido insertar',
+      });
+      return;
+    }
+
+    res.json({
+      success: true,
+      id: spellsList.insertId, // id que generó MySQL para la nueva fila
+    });
+  } catch (error) {
+    res.json({
+      success: false,
+      message: `Ha ocurrido un error${error}`,
+    });
+  }
 });
