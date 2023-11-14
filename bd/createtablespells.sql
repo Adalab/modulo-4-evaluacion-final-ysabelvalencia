@@ -27,3 +27,15 @@ INSERT INTO `spells` (`slug`, `category`, `creator`, `effect`, `hand`, `image`,`
 INSERT INTO `spells` (`slug`, `category`, `creator`, `effect`, `hand`, `image`,`incantation`, `light`, `name`,`wiki`) VALUES ("amplifying-charm","Charm",null,"Loudens target","Direct at target","https://static.wikia.nocookie.net/harrypotter/images/2/29/Sonorous_GOF_Dumbledore_1.jpg","Sonorus(soh-NOHR-us)","None","Amplifying Charm","https://harrypotter.fandom.com/wiki/Amplifying_Charm");
 
 
+{
+  "slug": 
+  "category":
+  "creator":
+  "effect":
+  "hand":
+  "image":
+  "incantation":
+  "light":
+  "name":
+  "wiki"
+}
