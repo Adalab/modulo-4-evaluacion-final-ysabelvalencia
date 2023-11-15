@@ -1,0 +1,21 @@
+# Node.js
+node_modules/
+
+# Environment variables
+.env
+
+# Log files
+*.log
+
+# Compiled binary addons
+build/Release/
+
+# Editor-specific files
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
