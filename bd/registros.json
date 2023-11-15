@@ -1,0 +1,95 @@
+[
+  {
+    "name": "Arania Exumai",
+    "category": "Charm",
+    "effect": "Repelled spiders",
+    "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/9/9b/AraniaExumaiGesture.png/revision/latest?cb=20210128170908",
+    "image": "https://static.wikia.nocookie.net/harrypotter/images/3/3e/Arania_Exumai_HM_Spell_Icon.png",
+    "incantation": "Arania Exumai(ah-RAHN-ee-a EX-oo-may)",
+    "light": "Blue",
+    "wiki": "https://harrypotter.fandom.com/wiki/Arania_Exumai"
+  },
+
+  {
+    "name": "Ascension Charm",
+    "category": "Charm",
+    "effect": "Lifted caster in air",
+    "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/7/78/Ascendio_wand_movement_HM.png/revision/latest?cb=20210914072559",
+    "image": "https://static.wikia.nocookie.net/harrypotter/images/1/1b/NewtAscendio.gif",
+    "incantation": "Ascendio(ah-SEN-dee-oh)",
+    "light": "None or blue",
+    "wiki": "https://harrypotter.fandom.com/wiki/Ascendio"
+  },
+  {
+    "name": "Animation Charm",
+    "category": "Charm",
+    "effect": "Animated target",
+    "hand_movement": null,
+    "image": "https://static.wikia.nocookie.net/harrypotter/images/e/e5/Piertotum_Locomotor.gif",
+    "incantation": "Piertotum Locomotor(peer-TOH-tuhm loh-kuh-MOH-tor)",
+    "light": "None, or green",
+    "wiki": "https://harrypotter.fandom.com/wiki/Piertotum_Locomotor"
+  },
+  {
+    "name": "Blasting Curse",
+    "category": "Curse",
+    "effect": "Explosion",
+    "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/6/66/Confringo_wand_movement_HM.png/revision/latest?cb=20210930100508",
+    "image": "https://static.wikia.nocookie.net/harrypotter/images/3/30/Blasting_Curse_DHF1.gif",
+    "incantation": "Confringo(con-FRING-go)",
+    "light": "Fiery orange",
+    "wiki": "https://harrypotter.fandom.com/wiki/Blasting_Curse"
+  },
+  {
+    "name": "Bombarda Maxima",
+    "category": "Charm",
+    "effect": "Powerful explosion",
+    "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/0/0d/Bombarda_wand_movement_WU.png/revision/latest?cb=20200909174006",
+    "image": "https://static.wikia.nocookie.net/harrypotter/images/d/d7/Bombarda_Maxima_HM.png",
+    "incantation": "Bombarda Maxima(bom-BAR-da MAKS-ee-ma)",
+    "light": "White or yellow",
+    "wiki": "https://harrypotter.fandom.com/wiki/Bombarda_Maxima"
+  },
+  {
+    "name": "Box Blasting Charm",
+    "category": "Charm",
+    "effect": "Opens chests",
+    "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/2/2f/CistemAperioHM.png/revision/latest?cb=20210128171815",
+    "image": "https://static.wikia.nocookie.net/harrypotter/images/e/ef/Cistem_Aperio_HM_Spell_Icon.png",
+    "incantation": "Cistem Aperio (SEES-tem a-PAIR-ee-oh)",
+    "light": "White",
+    "wiki": "https://harrypotter.fandom.com/wiki/Box_Blasting_Charm"
+  },
+
+  {
+    "name": "Unlocking Charm",
+    "category": "Charm",
+    "effect": "Unlocked objects",
+    "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/3/35/Unlocking-spell.png/revision/latest?cb=20110924151048",
+    "image": "https://static.wikia.nocookie.net/harrypotter/images/0/0e/Alohomora.gif/revision/latest?cb=20140811055322",
+    "incantation": "Alohomora(ah-LOH-ho-MOR-ah)",
+    "light": "Invisible, blue, yellow, or purple",
+    "wiki": "https://harrypotter.fandom.com/wiki/Unlocking_Charm"
+  },
+
+  {
+    "name": "Summoning Charm",
+    "category": "Charm",
+    "effect": "Summoned an object",
+    "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/9/9b/AraniaExumaiGesture.png/revision/latest?cb=20210128170908",
+    "image": "https://static.wikia.nocookie.net/harrypotter/images/9/99/Accio_cup.gif/revision/latest?cb=20160520023137",
+    "incantation": "Accio (AH-kee-oh)",
+    "light": "None",
+    "wiki": "https://harrypotter.fandom.com/wiki/Summoning_Charm"
+  },
+  {
+    "name": "Killing Curse",
+    "category": "Curse",
+    "effect": "Instantaneous death",
+    "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/e/e2/Killing-curse.png/revision/latest?cb=20120517184343",
+    "image": "https://static.wikia.nocookie.net/harrypotter/images/7/78/Avada-Kedavra.gif",
+    "incantation": "Avada Kedavra(a-VAH-dah ke-DAH-vra)",
+    "light": "Green",
+    "wiki": "https://harrypotter.fandom.com/wiki/Killing_Curse"
+  }
+]

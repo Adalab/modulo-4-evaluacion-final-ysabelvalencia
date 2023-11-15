@@ -1,0 +1,29 @@
+
+
+{
+  "name": "",
+  "category":"",
+  "effect":"",
+  "hand_movement":"",
+  "image":"",
+  "incantation":"",
+  "light":"",
+  "wiki":""
+},
+
+{
+  "name": "test2",
+  "category": "test3",
+  "effect": "test3",
+  "hand_movement": "test3",
+  "image": "test3",
+  "incantation": "test3",
+  "light": "test3",
+  "wiki": "test3",
+},
+
+{
+    "email":"",
+    "password":"",
+    "name":"",
+  }

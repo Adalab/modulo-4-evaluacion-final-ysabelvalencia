@@ -1,92 +1,46 @@
---Modelo para el body de postman
-{
-  "slug": 
-  "category":
-  "creator":
-  "effect":
-  "hand":
-  "image":
-  "incantation":
-  "light":
-  "name":
-  "wiki"
-}
-
-
-
-
-
 use freedb_module4_exam;
 
 CREATE TABLE `spells` (
-  `idSpell` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `slug` varchar(60) NOT NULL,
+   `idSpell` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `name` varchar(60) NOT NULL,
   `category` varchar(60) NOT NULL,
-  `creator` varchar(60) DEFAULT NULL,
-  `effect` varchar(60) NOT NULL,
-  `hand` varchar(60) DEFAULT NULL,
+  `effect` varchar(150) NOT NULL,
+  `hand_movement` varchar(200) DEFAULT NULL,
   `image` varchar(150) DEFAULT NULL,
   `incantation` varchar(60) DEFAULT NULL,
-  `light` varchar(60) NOT NULL
+  `light` varchar(60) NOT NULL,
+  `wiki` varchar(150) DEFAULT NULL,
 );
 
-ALTER TABLE `freedb_module4_exam`.`spells` 
-ADD COLUMN `name` VARCHAR(60) NOT NULL AFTER `light`,
-ADD COLUMN `wiki` VARCHAR(150) NULL DEFAULT NULL AFTER `name`;
+-- Introducir datos en la tabla
 
--- Prueba 1 para introducir datos en la tabla
+INSERT INTO `spells` (`name`,`category`, `effect`,`hand_movement`,`image`,`incantation`, `light`,`wiki`) VALUES ("Arania Exumai","Charm","Repelled spiders", "https://static.wikia.nocookie.net/harrypotter/images/9/9b/AraniaExumaiGesture.png/revision/latest?cb=20210128170908", "https://static.wikia.nocookie.net/harrypotter/images/3/3e/Arania_Exumai_HM_Spell_Icon.png","Arania Exumai(ah-RAHN-ee-a EX-oo-may)","Blue",   "https://harrypotter.fandom.com/wiki/Arania_Exumai");
 
-INSERT INTO `spells` (`slug`, `category`, `creator`, `effect`, `hand`, `image`,`incantation`, `light`, `name`,`wiki`) VALUES ("age-line","Charm",null,"Prevents people above or below a certain age from access to a target",  null,"https://static.wikia.nocookie.net/harrypotter/images/e/e5/Age_Line_surrounding_the_Goblet_of_Fire_PM.jpg", null, "Blue","Age Line","https://harrypotter.fandom.com/wiki/Age_Line");
+INSERT INTO `spells` (`name`,`category`, `effect`,`hand_movement`,`image`,`incantation`, `light`,`wiki`) VALUES ("Ascension Charm", "Charm", "Lifted caster in air", "https://static.wikia.nocookie.net/harrypotter/images/7/78/Ascendio_wand_movement_HM.png/revision/latest?cb=20210914072559",  "https://static.wikia.nocookie.net/harrypotter/images/1/1b/NewtAscendio.gif", "Ascendio(ah-SEN-dee-oh)", "None or blue", "https://harrypotter.fandom.com/wiki/Ascendio");
 
--- Amplio VARCHAR porque habia sobrepasado los 60 caracteres
-
-ALTER TABLE `freedb_module4_exam`.`spells` 
-CHANGE COLUMN `effect` `effect` VARCHAR(150) NOT NULL ;
-
---Prueba 2 OK, se añaden las dos filas nuevas correctamente
-
-INSERT INTO `spells` (`slug`, `category`, `creator`, `effect`, `hand`, `image`,`incantation`, `light`, `name`,`wiki`) VALUES ("alarte-ascendare","Charm",null,"Rockets target upward","Brandish wand","https://static.wikia.nocookie.net/harrypotter/images/c/c4/Alarte_Ascendare.gif","Alarte Ascendare(a-LAR-tay a-SEN-der-ay)","Red","Alarte Ascendare","https://harrypotter.fandom.com/wiki/Alarte_Ascendare");
-
-INSERT INTO `spells` (`slug`, `category`, `creator`, `effect`, `hand`, `image`,`incantation`, `light`, `name`,`wiki`) VALUES ("amplifying-charm","Charm",null,"Loudens target","Direct at target","https://static.wikia.nocookie.net/harrypotter/images/2/29/Sonorous_GOF_Dumbledore_1.jpg","Sonorus(soh-NOHR-us)","None","Amplifying Charm","https://harrypotter.fandom.com/wiki/Amplifying_Charm");
+INSERT INTO `spells` (`name`,`category`, `effect`,`hand_movement`,`image`,`incantation`, `light`,`wiki`) VALUES ("Animation Charm", "Charm", "Animated target", null, "https://static.wikia.nocookie.net/harrypotter/images/e/e5/Piertotum_Locomotor.gif", "Piertotum Locomotor(peer-TOH-tuhm loh-kuh-MOH-tor)", "None, or green", "https://harrypotter.fandom.com/wiki/Piertotum_Locomotor");
 
 SELECT * FROM spells;
 
--- Prueba 3 OK, actualizar un solo campo. Cambio creator = Null por creator = Unknown.
+INSERT INTO `spells` (`name`,`category`, `effect`,`hand_movement`,`image`,`incantation`, `light`,`wiki`) VALUES ("test", "test","test","test","test","test","test","test");
+
+SELECT * FROM spells;
 
 UPDATE spells 
-SET slug ='amplifying-charm',
-    category ='Charm',
-    creator ='Unknown',
-    effect ='Loudens target',
-    hand ='Direct at target',
-    image ='https://static.wikia.nocookie.net/harrypotter/images/2/29/Sonorous_GOF_Dumbledore_1.jpg', 
-    incantation ='Sonorus(soh-NOHR-us)',
-    light ='None',
-    name ='Amplifying Charm',
-    wiki ='https://harrypotter.fandom.com/wiki/Amplifying_Charm'
-WHERE idSpell = 4;
+SET name ="testUpdate",
+    category ="test",
+    effect ="test",
+    hand_movement = "testUpdate",
+    image ="test",
+    light ="test",
+    wiki = "test"
+WHERE idSpell = 9;
 
--- Prueba 4 OK,  cambio varios campos por Test.
-
-UPDATE spells 
-SET slug ='Test',
-    category ='Test',
-    creator ='Unknown',
-    effect ='test',
-    hand ='Direct at target',
-    image ='https://static.wikia.nocookie.net/harrypotter/images/2/29/Sonorous_GOF_Dumbledore_1.jpg', 
-    incantation ='Sonorus(soh-NOHR-us)',
-    light ='Test',
-    name ='Amplifying Charm',
-    wiki ='https://harrypotter.fandom.com/wiki/Amplifying_Charm'
-WHERE idSpell = 4;
-
+DELETE FROM `freedb_module4_exam`.`spells` WHERE (`idSpell` = '21');
 
 
 
 --------BONUS----------
-
-
 CREATE TABLE `users`(
  `idUser`int NOT NULL AUTO_INCREMENT PRIMARY KEY,
  `email` VARCHAR(60) NOT NULL UNIQUE,
@@ -97,3 +51,8 @@ CREATE TABLE `users`(
 SELECT * FROM users;
 
 INSERT INTO users(`name`, `email`, `password`) VALUES ("Ysabel", "ysaval@gmail.com", "12345678")
+
+DELETE FROM `freedb_module4_exam`.`users` WHERE (`idUser` = '3');
+DELETE FROM `freedb_module4_exam`.`users` WHERE (`idUser` = '5');
+DELETE FROM `freedb_module4_exam`.`users` WHERE (`idUser` = '6');
+DELETE FROM `freedb_module4_exam`.`users` WHERE (`idUser` = '9');
