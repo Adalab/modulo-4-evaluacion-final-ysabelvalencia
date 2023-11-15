@@ -10,7 +10,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-//BONUS,
+//BONUS, uso de dotenv
+
 const dbConfig = {
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
@@ -29,6 +30,7 @@ const generateToken = (payload) => {
   return token;
 };
 
+//BONUS, establecer middleware
 const authenticateJWT = (req, res, next) => {
   const token = req.header('Authorization');
 
@@ -64,7 +66,7 @@ app.listen(port, () => {
   console.log(`Servidor iniciado en http://localhost:${port}`);
 });
 
-//1.ENDPOINT PARA COGER TODA LA LISTA DE SPELLS
+//1.ENDPOINT PARA COGER TODOS LOS HECHIZOS
 
 app.get('/spells', async (req, res) => {
   let query = 'SELECT * FROM spells';
@@ -81,7 +83,7 @@ app.get('/spells', async (req, res) => {
   });
 });
 
-//2.ENDPOINT CREAR NUEVA ENTRADA EN LA BD
+//2.ENDPOINT CREAR UN NUEVO HECHIZO
 
 app.post('/spells', async (req, res) => {
   const dataSpell = req.body; //objeto
@@ -137,7 +139,7 @@ app.post('/spells', async (req, res) => {
   }
 });
 
-//3.ACTUALIZAR UN SPELL YA EXISTENTE
+//3.ACTUALIZAR UN HECHIZO YA EXISTENTE
 
 app.put('/spells/:id', async (req, res) => {
   const dataSpell = req.body; //objeto
@@ -181,7 +183,7 @@ app.put('/spells/:id', async (req, res) => {
   });
 });
 
-//4. ELIMINAR UN SPELL DE LA TABLA
+//4. ELIMINAR UN HECHIZO
 
 app.delete('/spells/:id', async (req, res) => {
   const idSpell = req.params.id;
@@ -266,7 +268,8 @@ app.post('/login', async (req, res) => {
   });
 });
 
-//6.BONUS IMPLEMENTAR UN MIDDLEWARE DE AUTENTICACIÓN (definido en L.29).Se utiliza en este endpoint para que solo tengan acceso los usuarios logados correctamente.
+//6.BONUS. MIDDLEWARE DE AUTENTICACIÓN (definido en L.29)
+//Se utiliza en este endpoint para que solo tengan acceso los usuarios logados correctamente.
 
 app.get('/profile', authenticateJWT, async (req, res) => {
   const idUser = req.user.idUser;
