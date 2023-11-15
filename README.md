@@ -58,10 +58,16 @@ Algunas ideas que os proponemos como ejercicios de repaso para cuando os pongái
 
 - [X] Instala alguna librería como dotenv para gestionar la contraseña y datos de acceso a la base de
 datos con variables de entorno.
-- [ ]  Puedes subir el servidor de la API a algún servicio como Render para que esté disponible en Internet.
+
+- [X]  Puedes subir el servidor de la API a algún servicio como Render para que esté disponible en Internet.
 
 - [ ]  Puedes agregar un carpeta configurada con un servidor de estáticos en el que haya una pequeña
 aplicación Frontend que permita cosultar alguno de los endpoint del API.
 - [ ]  Puedes instalar y configurar la librería Swagger para generar una página web con la documentación
 de los endpoints de vuestra API.
+
+
+## Author
+
+[![Autor](https://img.shields.io/badge/-%20Ysabel%20Valencia%20-%20pink?logo=github&labelColor=grey&color=rgb(59%2C%202%2C%2061))](https://github.com/ysabelvalencia)
 
