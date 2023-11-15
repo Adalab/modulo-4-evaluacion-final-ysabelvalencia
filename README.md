@@ -59,7 +59,7 @@ Algunas ideas que os proponemos como ejercicios de repaso para cuando os pongái
 - [X] Instala alguna librería como dotenv para gestionar la contraseña y datos de acceso a la base de
 datos con variables de entorno.
 
-- [X]  Puedes subir el servidor de la API a algún servicio como Render para que esté disponible en Internet.
+- [X]  Puedes subir el servidor de la API a algún servicio como Render para que esté disponible en Internet: https://api-spells-of-harry-potter.onrender.com/spells
 
 - [ ]  Puedes agregar un carpeta configurada con un servidor de estáticos en el que haya una pequeña
 aplicación Frontend que permita cosultar alguno de los endpoint del API.
