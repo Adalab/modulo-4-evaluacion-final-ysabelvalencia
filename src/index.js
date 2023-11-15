@@ -86,40 +86,41 @@ app.get('/spells', async (req, res) => {
 //2.ENDPOINT CREAR UN NUEVO HECHIZO
 
 app.post('/spells', async (req, res) => {
-  const dataSpell = req.body; //objeto
-  const {
-    name,
-    category,
-    effect,
-    hand_movement,
-    image,
-    incantation,
-    light,
-    wiki,
-  } = dataSpell;
-
-  if (
-    !name ||
-    !category ||
-    !effect ||
-    !light ||
-    name.trim() === '' ||
-    category.trim() === '' ||
-    effect.trim() === '' ||
-    light.trim() === ''
-  ) {
-    return res.status(400).json({
-      success: false,
-      message:
-        'Upps! Spells not added. Name, category, effect, and light are required fields.',
-    });
-  }
-
-  let sql =
-    'INSERT INTO spells (name, category, effect, hand_movement, image,incantation, light, wiki) VALUES (?, ?, ?, ?, ?, ?, ?, ?);';
-
+  let conn;
   try {
-    const conn = await getConnection();
+    const dataSpell = req.body;
+    const {
+      name,
+      category,
+      effect,
+      hand_movement,
+      image,
+      incantation,
+      light,
+      wiki,
+    } = dataSpell;
+
+    if (
+      !name ||
+      !category ||
+      !effect ||
+      !light ||
+      name.trim() === '' ||
+      category.trim() === '' ||
+      effect.trim() === '' ||
+      light.trim() === ''
+    ) {
+      return res.status(400).json({
+        success: false,
+        message:
+          'Upps! Spells not added. Name, category, effect, and light are required fields.',
+      });
+    }
+
+    let sql =
+      'INSERT INTO spells (name, category, effect, hand_movement, image,incantation, light, wiki) VALUES (?, ?, ?, ?, ?, ?, ?, ?);';
+
+    conn = await getConnection();
 
     const [spellsList] = await conn.query(sql, [
       name,
@@ -159,7 +160,9 @@ app.post('/spells', async (req, res) => {
       });
     }
   } finally {
-    conn.end();
+    if (conn) {
+      conn.end();
+    }
   }
 });
 
@@ -180,6 +183,31 @@ app.put('/spells/:id', async (req, res) => {
 
   const idSpell = req.params.id;
 
+  if (
+    !name ||
+    !category ||
+    !effect ||
+    !light ||
+    name.trim() === '' ||
+    category.trim() === '' ||
+    effect.trim() === '' ||
+    light.trim() === ''
+  ) {
+    return res.status(400).json({
+      success: false,
+      message:
+        'Upps! It was not possible to update the spell. Name, category, effect, and light are required fields.',
+    });
+  }
+
+  if (isNaN(parseInt(idSpell))) {
+    res.json({
+      success: false,
+      error: 'To find your spell the id must be a number',
+    });
+    return;
+  }
+
   let sql =
     'UPDATE spells SET name=?, category=?, effect=?, hand_movement=?, image=?, incantation=?, light=?, wiki=? WHERE idSpell=?;';
 
@@ -197,6 +225,12 @@ app.put('/spells/:id', async (req, res) => {
       wiki,
       idSpell,
     ]);
+
+    if (spellsList.affectedRows === 0) {
+      return res
+        .status(404)
+        .json({ success: false, message: 'Spell not found.' });
+    }
 
     res.json({
       success: true,
@@ -217,35 +251,45 @@ app.put('/spells/:id', async (req, res) => {
 
 app.get('/spells/:id', async (req, res) => {
   const idSpell = req.params.id;
+  let conn;
 
-  if (isNaN(parseInt(idSpell))) {
+  try {
+    if (isNaN(parseInt(idSpell))) {
+      res.json({
+        success: false,
+        error: 'To find your spell the id must be a number',
+      });
+      return;
+    }
+
+    let query = 'SELECT * FROM spells WHERE idSpell =?';
+
+    conn = await getConnection();
+
+    const [spellsList] = await conn.query(query, [idSpell]);
+    const numOfSpells = spellsList.length;
+
+    if (numOfSpells === 0) {
+      res.json({
+        success: false,
+        message: 'The spell you are looking for does not exist.',
+      });
+      return;
+    }
     res.json({
+      spellsList: spellsList[0],
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
       success: false,
-      error: 'To find your spell the id must be a number',
+      message: 'An error occurred while fetching the spell.',
     });
-    return;
+  } finally {
+    if (conn) {
+      conn.end();
+    }
   }
-
-  let query = 'SELECT * FROM spells WHERE idSpell =?';
-
-  const conn = await getConnection();
-
-  //Ejecutar esa consulta
-  const [spellsList] = await conn.query(query, [idSpell]);
-  const numOfSpells = spellsList.length;
-
-  if (numOfSpells === 0) {
-    res.json({
-      success: true,
-      message: 'The spell you are looking for does not exist.',
-    });
-    return;
-  }
-
-  //Enviar una respuesta
-  res.json({
-    spellsList: spellsList[0], // listado
-  });
 });
 
 //4. ELIMINAR UN HECHIZO
@@ -264,9 +308,9 @@ app.delete('/spells/:id', async (req, res) => {
   const conn = await getConnection();
 
   try {
-    const [spellList] = await conn.query(sql, [idSpell]);
+    const [spellsList] = await conn.query(sql, [idSpell]);
 
-    if (spellList.affectedRows === 0) {
+    if (spellsList.affectedRows === 0) {
       return res
         .status(404)
         .json({ success: false, message: 'Spell not found.' });
