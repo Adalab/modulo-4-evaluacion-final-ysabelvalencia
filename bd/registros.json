@@ -1,95 +1,293 @@
-[
-  {
-    "name": "Arania Exumai",
-    "category": "Charm",
-    "effect": "Repelled spiders",
-    "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/9/9b/AraniaExumaiGesture.png/revision/latest?cb=20210128170908",
-    "image": "https://static.wikia.nocookie.net/harrypotter/images/3/3e/Arania_Exumai_HM_Spell_Icon.png",
-    "incantation": "Arania Exumai(ah-RAHN-ee-a EX-oo-may)",
-    "light": "Blue",
-    "wiki": "https://harrypotter.fandom.com/wiki/Arania_Exumai"
+{
+  "info": {
+    "count": 26
   },
-
-  {
-    "name": "Ascension Charm",
-    "category": "Charm",
-    "effect": "Lifted caster in air",
-    "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/7/78/Ascendio_wand_movement_HM.png/revision/latest?cb=20210914072559",
-    "image": "https://static.wikia.nocookie.net/harrypotter/images/1/1b/NewtAscendio.gif",
-    "incantation": "Ascendio(ah-SEN-dee-oh)",
-    "light": "None or blue",
-    "wiki": "https://harrypotter.fandom.com/wiki/Ascendio"
-  },
-  {
-    "name": "Animation Charm",
-    "category": "Charm",
-    "effect": "Animated target",
-    "hand_movement": null,
-    "image": "https://static.wikia.nocookie.net/harrypotter/images/e/e5/Piertotum_Locomotor.gif",
-    "incantation": "Piertotum Locomotor(peer-TOH-tuhm loh-kuh-MOH-tor)",
-    "light": "None, or green",
-    "wiki": "https://harrypotter.fandom.com/wiki/Piertotum_Locomotor"
-  },
-  {
-    "name": "Blasting Curse",
-    "category": "Curse",
-    "effect": "Explosion",
-    "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/6/66/Confringo_wand_movement_HM.png/revision/latest?cb=20210930100508",
-    "image": "https://static.wikia.nocookie.net/harrypotter/images/3/30/Blasting_Curse_DHF1.gif",
-    "incantation": "Confringo(con-FRING-go)",
-    "light": "Fiery orange",
-    "wiki": "https://harrypotter.fandom.com/wiki/Blasting_Curse"
-  },
-  {
-    "name": "Bombarda Maxima",
-    "category": "Charm",
-    "effect": "Powerful explosion",
-    "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/0/0d/Bombarda_wand_movement_WU.png/revision/latest?cb=20200909174006",
-    "image": "https://static.wikia.nocookie.net/harrypotter/images/d/d7/Bombarda_Maxima_HM.png",
-    "incantation": "Bombarda Maxima(bom-BAR-da MAKS-ee-ma)",
-    "light": "White or yellow",
-    "wiki": "https://harrypotter.fandom.com/wiki/Bombarda_Maxima"
-  },
-  {
-    "name": "Box Blasting Charm",
-    "category": "Charm",
-    "effect": "Opens chests",
-    "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/2/2f/CistemAperioHM.png/revision/latest?cb=20210128171815",
-    "image": "https://static.wikia.nocookie.net/harrypotter/images/e/ef/Cistem_Aperio_HM_Spell_Icon.png",
-    "incantation": "Cistem Aperio (SEES-tem a-PAIR-ee-oh)",
-    "light": "White",
-    "wiki": "https://harrypotter.fandom.com/wiki/Box_Blasting_Charm"
-  },
-
-  {
-    "name": "Unlocking Charm",
-    "category": "Charm",
-    "effect": "Unlocked objects",
-    "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/3/35/Unlocking-spell.png/revision/latest?cb=20110924151048",
-    "image": "https://static.wikia.nocookie.net/harrypotter/images/0/0e/Alohomora.gif/revision/latest?cb=20140811055322",
-    "incantation": "Alohomora(ah-LOH-ho-MOR-ah)",
-    "light": "Invisible, blue, yellow, or purple",
-    "wiki": "https://harrypotter.fandom.com/wiki/Unlocking_Charm"
-  },
-
-  {
-    "name": "Summoning Charm",
-    "category": "Charm",
-    "effect": "Summoned an object",
-    "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/9/9b/AraniaExumaiGesture.png/revision/latest?cb=20210128170908",
-    "image": "https://static.wikia.nocookie.net/harrypotter/images/9/99/Accio_cup.gif/revision/latest?cb=20160520023137",
-    "incantation": "Accio (AH-kee-oh)",
-    "light": "None",
-    "wiki": "https://harrypotter.fandom.com/wiki/Summoning_Charm"
-  },
-  {
-    "name": "Killing Curse",
-    "category": "Curse",
-    "effect": "Instantaneous death",
-    "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/e/e2/Killing-curse.png/revision/latest?cb=20120517184343",
-    "image": "https://static.wikia.nocookie.net/harrypotter/images/7/78/Avada-Kedavra.gif",
-    "incantation": "Avada Kedavra(a-VAH-dah ke-DAH-vra)",
-    "light": "Green",
-    "wiki": "https://harrypotter.fandom.com/wiki/Killing_Curse"
-  }
-]
+  "spellsList": [
+    {
+      "idSpell": 6,
+      "name": "Arania Exumai",
+      "category": "Charm",
+      "effect": "Repelled spiders",
+      "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/9/9b/AraniaExumaiGesture.png/revision/latest?cb=20210128170908",
+      "image": "https://static.wikia.nocookie.net/harrypotter/images/3/3e/Arania_Exumai_HM_Spell_Icon.png",
+      "incantation": "Arania Exumai(ah-RAHN-ee-a EX-oo-may)",
+      "light": "Blue",
+      "wiki": "https://harrypotter.fandom.com/wiki/Arania_Exumai"
+    },
+    {
+      "idSpell": 7,
+      "name": "Ascension Charm",
+      "category": "Charm",
+      "effect": "Lifted caster in air",
+      "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/7/78/Ascendio_wand_movement_HM.png/revision/latest?cb=20210914072559",
+      "image": "https://static.wikia.nocookie.net/harrypotter/images/1/1b/NewtAscendio.gif",
+      "incantation": "Ascendio(ah-SEN-dee-oh)",
+      "light": "None or blue",
+      "wiki": "https://harrypotter.fandom.com/wiki/Ascendio"
+    },
+    {
+      "idSpell": 8,
+      "name": "Animation Charm",
+      "category": "Charm",
+      "effect": "Animated target",
+      "hand_movement": null,
+      "image": "https://static.wikia.nocookie.net/harrypotter/images/e/e5/Piertotum_Locomotor.gif",
+      "incantation": "Piertotum Locomotor(peer-TOH-tuhm loh-kuh-MOH-tor)",
+      "light": "None, or green",
+      "wiki": "https://harrypotter.fandom.com/wiki/Piertotum_Locomotor"
+    },
+    {
+      "idSpell": 35,
+      "name": "Blasting Curse",
+      "category": "Curse",
+      "effect": "Explosion",
+      "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/6/66/Confringo_wand_movement_HM.png",
+      "image": "https://static.wikia.nocookie.net/harrypotter/images/3/30/Blasting_Curse_DHF1.gif",
+      "incantation": "Confringo(con-FRING-go)",
+      "light": "Fiery orange",
+      "wiki": "https://harrypotter.fandom.com/wiki/Blasting_Curse"
+    },
+    {
+      "idSpell": 36,
+      "name": "Banishing Charm",
+      "category": "Charm",
+      "effect": "Sent target away",
+      "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/a/af/DepulsoGesture.png",
+      "image": "https://static.wikia.nocookie.net/harrypotter/images/d/db/Depulso.jpg",
+      "incantation": "Depulso(de-PUHL-so)",
+      "light": "White, red or yellow",
+      "wiki": "https://harrypotter.fandom.com/wiki/Banishing_Charm"
+    },
+    {
+      "idSpell": 37,
+      "name": "Boggart-Banishing Spell",
+      "category": "Charm",
+      "effect": "Turned a Boggart into something amusing",
+      "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/e/e4/Riddikulus_wand_movement_PM.png",
+      "image": "https://static.wikia.nocookie.net/harrypotter/images/d/d7/Snape_boggart.gif",
+      "incantation": "Riddikulus(ri-di-KULL-lis)",
+      "light": "None",
+      "wiki": "https://harrypotter.fandom.com/wiki/Boggart-Banishing_Spell"
+    },
+    {
+      "idSpell": 38,
+      "name": "Bombarda Maxima",
+      "category": "Charm",
+      "effect": "Powerful explosion",
+      "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/0/0d/Bombarda_wand_movement_WU.png",
+      "image": "https://static.wikia.nocookie.net/harrypotter/images/d/d7/Bombarda_Maxima_HM.png",
+      "incantation": "Bombarda Maxima(bom-BAR-da MAKS-ee-ma)",
+      "light": "White or yellow",
+      "wiki": "https://harrypotter.fandom.com/wiki/Bombarda_Maxima"
+    },
+    {
+      "idSpell": 39,
+      "name": "Box Blasting Charm",
+      "category": "Charm",
+      "effect": "Opens chests",
+      "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/2/2f/CistemAperioHM.png",
+      "image": "https://static.wikia.nocookie.net/harrypotter/images/e/ef/Cistem_Aperio_HM_Spell_Icon.png",
+      "incantation": "Cistem Aperio (SEES-tem a-PAIR-ee-oh)",
+      "light": "White",
+      "wiki": "https://harrypotter.fandom.com/wiki/Box_Blasting_Charm"
+    },
+    {
+      "idSpell": 40,
+      "name": "Disarming Charm",
+      "category": "Charm",
+      "effect": "Disarms an opponent",
+      "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/c/ce/Disarming-charm.png",
+      "image": "https://static.wikia.nocookie.net/harrypotter/images/9/96/Snape_disarming_Lockhart_COS.gif",
+      "incantation": "Expelliarmus(ex-PEL-lee-ar-muss)",
+      "light": "Scarlet",
+      "wiki": "https://harrypotter.fandom.com/wiki/Disarming_Charm"
+    },
+    {
+      "idSpell": 41,
+      "name": "Engorgement Charm",
+      "category": "Charm",
+      "effect": "Caused swelling",
+      "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/c/c2/Engorgement-charm.png",
+      "image": "https://static.wikia.nocookie.net/harrypotter/images/6/62/Harry_casting_Engorgio.gif",
+      "incantation": "Engorgio (en-GOR-gee-oh)",
+      "light": "Icy blue",
+      "wiki": "https://harrypotter.fandom.com/wiki/Engorgement_Charm"
+    },
+    {
+      "idSpell": 42,
+      "name": "Fire-Making Spell",
+      "category": "Charm",
+      "effect": "Conjured flames",
+      "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/5/57/Fire-making-spell.png",
+      "image": "https://static.wikia.nocookie.net/harrypotter/images/6/6a/IncendioHM.png",
+      "incantation": "Incendio(in-SEN-dee-o)",
+      "light": "Orange/red",
+      "wiki": "https://harrypotter.fandom.com/wiki/Fire-Making_Spell"
+    },
+    {
+      "idSpell": 43,
+      "name": "Freezing Charm",
+      "category": "Charm",
+      "effect": "Stops movement and actions of the target",
+      "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/b/ba/Freezing-charm.png",
+      "image": "https://static.wikia.nocookie.net/harrypotter/images/c/c1/Immobulus.gif",
+      "incantation": "Immobulus(ih-MOH-byoo-luhs)",
+      "light": "Blue",
+      "wiki": "https://harrypotter.fandom.com/wiki/Freezing_Charm"
+    },
+    {
+      "idSpell": 44,
+      "name": "Imperius Curse",
+      "category": "Curse",
+      "effect": "Total control",
+      "hand_movement": "Point wand at victim",
+      "image": "https://static.wikia.nocookie.net/harrypotter/images/8/8c/Imperio1.gif",
+      "incantation": "Imperio(im-PEER-ee-oh)",
+      "light": "None",
+      "wiki": "https://harrypotter.fandom.com/wiki/Imperius_Curse"
+    },
+    {
+      "idSpell": 45,
+      "name": "Killing Curse",
+      "category": "Curse",
+      "effect": "Instantaneous death",
+      "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/e/e2/Killing-curse.png",
+      "image": "https://static.wikia.nocookie.net/harrypotter/images/7/78/Avada-Kedavra.gif",
+      "incantation": "Avada Kedavra(a-VAH-dah ke-DAH-vra)",
+      "light": "Green",
+      "wiki": "https://harrypotter.fandom.com/wiki/Killing_Curse"
+    },
+    {
+      "idSpell": 46,
+      "name": "Knockback Jinx",
+      "category": "Jinx",
+      "effect": "Knocked target back",
+      "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/c/ca/Knockback-jinx.png",
+      "image": "https://static.wikia.nocookie.net/harrypotter/images/f/ff/Flipendo_HM_Spell_Icon.png",
+      "incantation": "Flipendo(fli-PEN-doh)",
+      "light": "Blue, orange, yellow red, purple or white",
+      "wiki": "https://harrypotter.fandom.com/wiki/Knockback_Jinx"
+    },
+    {
+      "idSpell": 47,
+      "name": "Levitation Charm",
+      "category": "Charm",
+      "effect": "Made objects levitate",
+      "hand_movement": null,
+      "image": "https://static.wikia.nocookie.net/harrypotter/images/c/cf/Levitation_Charm_PSF.gif",
+      "incantation": "Wingardium Leviosa(wing-GAR-dee-um leh-vee-OH-sa)",
+      "light": "None",
+      "wiki": "https://harrypotter.fandom.com/wiki/Levitation_Charm"
+    },
+    {
+      "idSpell": 48,
+      "name": "Lumos Maxima",
+      "category": "Charm",
+      "effect": "Produced very bright light from wand tip",
+      "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/c/c7/Wand-lighting-charm.png",
+      "image": "https://static.wikia.nocookie.net/harrypotter/images/f/f4/Lumos_Maxima.gif",
+      "incantation": "Lumos Maxima(LOO-mos MAX-i-muh)",
+      "light": "White",
+      "wiki": "https://harrypotter.fandom.com/wiki/Lumos_Maxima"
+    },
+    {
+      "idSpell": 49,
+      "name": "Memory Charm",
+      "category": "Charm",
+      "effect": "Erases memories",
+      "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/9/9f/Memory-charm.png",
+      "image": "https://static.wikia.nocookie.net/harrypotter/images/d/d8/Obliviate_backfire.gif",
+      "incantation": "Obliviate (oh-BLI-vee-ate)",
+      "light": "Green",
+      "wiki": "https://harrypotter.fandom.com/wiki/Memory_Charm"
+    },
+    {
+      "idSpell": 50,
+      "name": "Patronus Charm",
+      "category": "Charm",
+      "effect": "Conjured a spirit guardian",
+      "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/5/52/Expecto_Patronum_movement.png",
+      "image": "https://static.wikia.nocookie.net/harrypotter/images/f/fe/Patronus_PM_SilverStagPatronus_MomentIllust.jpg",
+      "incantation": "Expecto Patronum(ex-PEK-toh pa-TRO-num)",
+      "light": "Silver",
+      "wiki": "https://harrypotter.fandom.com/wiki/Patronus_Charm"
+    },
+    {
+      "idSpell": 51,
+      "name": "Sectumsempra",
+      "category": "Curse",
+      "effect": "Lacerates target",
+      "hand_movement": "Slash wand",
+      "image": "https://static.wikia.nocookie.net/harrypotter/images/3/3a/Sectumempra_Curse.gif",
+      "incantation": "Sectumsempra(SEC-tum-SEM-pra)",
+      "light": "White",
+      "wiki": "https://harrypotter.fandom.com/wiki/Sectumsempra"
+    },
+    {
+      "idSpell": 52,
+      "name": "Severing Charm",
+      "category": "Charm",
+      "effect": "Severed objects",
+      "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/4/4e/Severing-charm.png",
+      "image": "https://static.wikia.nocookie.net/harrypotter/images/7/78/DiffindoHM.png",
+      "incantation": "Diffindo(deef-IN-doe)",
+      "light": "Light green, pink or red",
+      "wiki": "https://harrypotter.fandom.com/wiki/Severing_Charm"
+    },
+    {
+      "idSpell": 53,
+      "name": "Shield Charm",
+      "category": "Charm",
+      "effect": "Reflected spells and blocked physical forces",
+      "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/a/a1/Protego_movement.png",
+      "image": "https://static.wikia.nocookie.net/harrypotter/images/7/78/DH2_Kingsley_Shacklebolt_Protego.gif",
+      "incantation": "Protego(pro-TAY-goh)",
+      "light": "Invisible on its own, reflected light of spell",
+      "wiki": "https://harrypotter.fandom.com/wiki/Shield_Charm"
+    },
+    {
+      "idSpell": 54,
+      "name": "Summoning Charm",
+      "category": "Charm",
+      "effect": "Summoned an object",
+      "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/9/9b/AraniaExumaiGesture.png",
+      "image": "https://static.wikia.nocookie.net/harrypotter/images/9/99/Accio_cup.gif/revision/latest?cb=20160520023137",
+      "incantation": "Accio (AH-kee-oh)",
+      "light": "None",
+      "wiki": "https://harrypotter.fandom.com/wiki/Summoning_Charm"
+    },
+    {
+      "idSpell": 55,
+      "name": "Tickling Charm",
+      "category": "Charm",
+      "effect": "Tickles and weakens",
+      "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/f/fc/Tickling-charm.png",
+      "image": "https://static.wikia.nocookie.net/harrypotter/images/b/ba/Rictusempra.gif",
+      "incantation": "Rictusempra(ric-tuh-SEM-pra)",
+      "light": "Silver",
+      "wiki": "https://harrypotter.fandom.com/wiki/Tickling_Charm"
+    },
+    {
+      "idSpell": 56,
+      "name": "Unlocking Charm",
+      "category": "Charm",
+      "effect": "Unlocked objects",
+      "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/3/35/Unlocking-spell.png",
+      "image": "https://static.wikia.nocookie.net/harrypotter/images/0/0e/Alohomora.gif/revision/latest?cb=20140811055322",
+      "incantation": "Alohomora(ah-LOH-ho-MOR-ah)",
+      "light": "Invisible, blue, yellow, or purple",
+      "wiki": "https://harrypotter.fandom.com/wiki/Unlocking_Charm"
+    },
+    {
+      "idSpell": 57,
+      "name": "Wand-Extinguishing Charm",
+      "category": "Charm",
+      "effect": "Extinguished wandlight",
+      "hand_movement": "https://static.wikia.nocookie.net/harrypotter/images/c/c1/Wand-extinguishing-charm.png",
+      "image": "https://static.wikia.nocookie.net/harrypotter/images/e/ed/SnapeNox.gif",
+      "incantation": "Nox(NOKSS)",
+      "light": "None",
+      "wiki": "https://harrypotter.fandom.com/wiki/Wand-Extinguishing_Charm"
+    }
+  ]
+}

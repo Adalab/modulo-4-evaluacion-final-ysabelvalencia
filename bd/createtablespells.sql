@@ -36,7 +36,7 @@ SET name ="testUpdate",
     wiki = "test"
 WHERE idSpell = 9;
 
-DELETE FROM `freedb_module4_exam`.`spells` WHERE (`idSpell` = '21');
+DELETE FROM `freedb_module4_exam`.`spells` WHERE (`idSpell` = '9');
 
 
 
@@ -50,9 +50,5 @@ CREATE TABLE `users`(
 
 SELECT * FROM users;
 
-INSERT INTO users(`name`, `email`, `password`) VALUES ("Ysabel", "ysaval@gmail.com", "12345678")
+INSERT INTO users(`name`, `email`, `password`) VALUES ("Harry", "harry@gmail.com", "123456")
 
-DELETE FROM `freedb_module4_exam`.`users` WHERE (`idUser` = '3');
-DELETE FROM `freedb_module4_exam`.`users` WHERE (`idUser` = '5');
-DELETE FROM `freedb_module4_exam`.`users` WHERE (`idUser` = '6');
-DELETE FROM `freedb_module4_exam`.`users` WHERE (`idUser` = '9');
