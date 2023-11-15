@@ -3,20 +3,23 @@ const cors = require('cors');
 const mysql = require('mysql2/promise');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
+require('dotenv').config();
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-async function getConnection() {
-  const connection = await mysql.createConnection({
-    host: 'sql.freedb.tech',
-    user: 'freedb_ysafvr8',
-    password: 'a2ARTaqg69*zSA8',
-    database: 'freedb_module4_exam',
-  });
+//BONUS,
+const dbConfig = {
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE,
+};
 
+async function getConnection() {
+  const connection = await mysql.createConnection(dbConfig);
   connection.connect();
   return connection;
 }
@@ -26,7 +29,6 @@ const generateToken = (payload) => {
   return token;
 };
 
-// Middleware de autenticación JWT
 const authenticateJWT = (req, res, next) => {
   const token = req.header('Authorization');
 
@@ -80,7 +82,6 @@ app.get('/spells', async (req, res) => {
 });
 
 //2.ENDPOINT CREAR NUEVA ENTRADA EN LA BD
-//validaciones: no dejar añadir más con el mismo nombre
 
 app.post('/spells', async (req, res) => {
   const dataSpell = req.body; //objeto
@@ -126,7 +127,7 @@ app.post('/spells', async (req, res) => {
 
     res.json({
       success: true,
-      id: spellsList.insertId, // id que generó MySQL para la nueva fila
+      id: spellsList.insertId,
     });
   } catch (error) {
     res.json({
@@ -189,7 +190,6 @@ app.delete('/spells/:id', async (req, res) => {
 
   const conn = await getConnection();
 
-  //Ejecutar esa consulta
   const [spellList] = await conn.query(sql, [idSpell]);
 
   res.json({
